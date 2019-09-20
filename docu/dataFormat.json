@@ -1,0 +1,29 @@
+{
+    "gps": {
+        "gga": {
+            "time": 123456,
+            "latt": 4807.038,
+            "lattD": "N",
+            "longit": 1131.001,
+            "longD": "E",
+            "fix": 8,
+            "satNum": 12,
+            "hDilution": 0.5,
+            "altMSL": 12.3,
+            "hautMSL": 45.6
+        },
+        "rmc": {
+            "time": 123456,
+            "date": 789123,
+            "status": "V",
+            "latt": 4807.038,
+            "lattD": "N",
+            "longit": 1131.001,
+            "longD": "E",
+            "speedOG": 22.4,
+            "trackAgl": 84.4,
+            "magVar": 3.1,
+            "magVarD": "W"
+        }
+    }
+}
