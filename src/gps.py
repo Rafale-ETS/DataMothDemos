@@ -13,3 +13,6 @@ while 1:
 
     if line[0] == '$GPGGA':
         print(line)
+        --
+        --
+        --
