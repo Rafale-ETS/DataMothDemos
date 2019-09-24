@@ -65,6 +65,6 @@ class Nmea_GPS:
     def debugPrint(self, line):
         print(line)
 
-        f = open("../debugGPSData.txt", "a+")
-        f.write(line)
-        f.close()
+        #f = open("../debugGPSData.txt", "a+")
+        #f.write(line)
+        #f.close()
