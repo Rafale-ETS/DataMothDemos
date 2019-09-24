@@ -36,8 +36,8 @@ class DataGPS:
 
 class Nmea_GPS:
 
-    def __init__(self):
-        self.serPort = '/dev/ttyUSB0'
+    def __init__(self, port):
+        self.serPort = port
         self.pooling = True
         self.debug = True
         self.serCon = serial.Serial(self.serPort, 4800, timeout=5)    
