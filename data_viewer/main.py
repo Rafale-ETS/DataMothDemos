@@ -16,7 +16,7 @@ gmap.load(QUrl.fromLocalFile(QDir.current().absoluteFilePath('data_viewer/map.ht
 
 model = QWebEngineView()
 model.settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
-model.load(QUrl.fromLocalFile(QDir.current().absoluteFilePath('data_viewer/map.html')))
+model.load(QUrl.fromLocalFile(QDir.current().absoluteFilePath('data_viewer/model.html')))
 
 generalLayout = QHBoxLayout()
 rightLayout = QVBoxLayout()
