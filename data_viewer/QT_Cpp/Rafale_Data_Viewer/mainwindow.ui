@@ -56,7 +56,7 @@
           </property>
           <property name="url" stdset="0">
            <url>
-            <string>file:///X:/Prog/GitProjects/DataMoth/data_viewer/QT_Cpp/Rafale_Data_Viewer/map.html</string>
+            <string>qrc:/web/webMap</string>
            </url>
           </property>
          </widget>
@@ -184,7 +184,7 @@
      <x>0</x>
      <y>0</y>
      <width>811</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
