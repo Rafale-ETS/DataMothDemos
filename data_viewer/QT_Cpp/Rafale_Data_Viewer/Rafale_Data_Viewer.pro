@@ -1,5 +1,7 @@
-QT       += core gui
+QT += core gui
 QT += webenginewidgets
+QT += 3dcore 3drender 3dinput 3dextras
+CONFIG += console
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,10 +20,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    modelview.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    modelview.h
 
 FORMS += \
     mainwindow.ui
@@ -30,3 +34,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    MothHullSimplifiedSmall.obj \
+    map.html
