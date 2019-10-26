@@ -18,13 +18,13 @@ class Data:
 
 rmc = DataRMC(246060, 789123, 'V', 4807.038, 'N', 1131.001, 'E', 22.4, 84.4, 3.1, 'W')
 gga = DataGGA(000000, 4807.038, 'N', 1131.001, 'E', 8, 12, 0.5, 12.3, 45.6)
-gps = DataGPS(gga.__dict__, rmc.__dict__)
+gps = DataGPS(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 4807.038, 'N', 1131.001, 'E', 22.4, 84.4, 0.5, 12.3, 45.6)
 
-acc = DataAccel(timeUtil.getTimeNowAsNMEA(), 1.256, 2.456, 3.456)
-gyr = DataGyro(timeUtil.getTimeNowAsNMEA(), 25, 45, 25)
-tem = DataTemperature(timeUtil.getTimeNowAsNMEA(), 30)
+acc = DataAccel(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 1.256, 2.456, 3.456)
+gyr = DataGyro(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 25, 45, 25)
+tem = DataTemperature(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 30)
 
-win = DataWind(timeUtil.getTimeNowAsNMEA(), 6, 25)
+win = DataWind(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 6, 25)
 
 data = Data(gps.__dict__, acc.__dict__, gyr.__dict__, tem.__dict__, win.__dict__)
 

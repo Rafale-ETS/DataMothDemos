@@ -5,22 +5,25 @@ from mpu6050 import mpu6050
 import timeUtil
 
 class DataAccel:
-    def __init__(self, time, x, y, z):
-        self.time = time #UTC en secondes
+    def __init__(self, time, date, x, y, z):
+        self.time = time #UTC en nmea
+        self.date = date
         self.x = x
         self.y = y
         self.z = z
 
 class DataGyro:
-    def __init__(self, time, pitch, yaw, roll):
-        self.time = time #UTC en secondes
+    def __init__(self, time, date, pitch, yaw, roll):
+        self.time = time #UTC en nmea
+        self.date = date
         self.pitch = pitch
         self.yaw = yaw
         self.roll = roll
 
 class DataTemperature:
-    def __init__(self, time, temp):
+    def __init__(self, time, date, temp):
         self.time = time
+        self.date = date
         self.temp = temp
 
 class GyroAccel:
@@ -32,16 +35,16 @@ class GyroAccel:
         x = accel_data.x #TODO: needs math formula
         y = accel_data.y #idem
         z = accel_data.z #idem 2
-        return DataAccel(timeUtil.getTimeNowAsNMEA(), x, y, z)
+        return DataAccel(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), x, y, z)
     
     def getGyroData(self):
         gyro_data = self.accelero.get_gyro_data()
         pitch = gyro_data.x #TODO: needs math formula
         yaw = gyro_data.y   #idem
         roll = gyro_data.z  #idem 2
-        return DataGyro(timeUtil.getTimeNowAsNMEA(), pitch, yaw, roll)
+        return DataGyro(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), pitch, yaw, roll)
 
     def getTemperatureData(self):
         temp = self.accelero.get_temp()
-        return DataTemperature(timeUtil.getTimeNowAsNMEA(), temp)
+        return DataTemperature(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), temp)
 

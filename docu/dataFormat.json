@@ -1,49 +1,39 @@
 {
     "gps": {
-        "gga": {
-            "time": 0,
-            "latt": 4807.038,
-            "lattD": "N",
-            "longit": 1131.001,
-            "longD": "E",
-            "fix": 8,
-            "satNum": 12,
-            "hDilution": 0.5,
-            "altMSL": 12.3,
-            "hautMSL": 45.6
-        },
-        "rmc": {
-            "time": 246060,
-            "date": 789123,
-            "status": "V",
-            "latt": 4807.038,
-            "lattD": "N",
-            "longit": 1131.001,
-            "longD": "E",
-            "speedOG": 22.4,
-            "trackAgl": 84.4,
-            "magVar": 3.1,
-            "magVarD": "W"
-        }
+        "time": 151931,
+        "date": 261019,
+        "latt": 4807.038,
+        "lattD": "N",
+        "longit": 1131.001,
+        "longD": "E",
+        "speedOG": 22.4,
+        "trackAgl": 84.4,
+        "hDilution": 0.5,
+        "altMSL": 12.3,
+        "hautMSL": 45.6
     },
     "acc": {
-        "time": 231921,
+        "time": 151931,
+        "date": 261019,
         "x": 1.256,
         "y": 2.456,
         "z": 3.456
     },
     "gyr": {
-        "time": 231921,
+        "time": 151931,
+        "date": 261019,
         "pitch": 25,
         "yaw": 45,
         "roll": 25
     },
     "tem": {
-        "time": 231921,
+        "time": 151931,
+        "date": 261019,
         "temp": 30
     },
     "win": {
-        "time": 231921,
+        "time": 151931,
+        "date": 261019,
         "speed": 6,
         "direc": 25
     }

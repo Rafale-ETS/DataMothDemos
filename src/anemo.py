@@ -2,8 +2,9 @@
 import timeUtil
 
 class DataWind:
-    def __init__(self, time, speed, direc):
+    def __init__(self, time, date, speed, direc):
         self.time = time
+        self.date = date
         self.speed = speed
         self.direc = direc
 
@@ -13,4 +14,4 @@ class Anemo:
 
     def getWindData(self):
         #TODO: get data from sensors
-        return DataWind(timeUtil.getTimeNowAsNMEA(), 0, 0) #TODO: change for actual data
+        return DataWind(timeUtil.getTimeNowAsNMEA(), timeUtil.getDateNowAsNMEA(), 0, 0) #TODO: change for actual data
