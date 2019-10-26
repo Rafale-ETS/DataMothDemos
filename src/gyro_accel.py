@@ -29,14 +29,14 @@ class GyroAccel:
 
     def getAccelData(self):
         accel_data = self.accelero.get_accel_data()
-        x = accel_data.x #needs math formula
+        x = accel_data.x #TODO: needs math formula
         y = accel_data.y #idem
         z = accel_data.z #idem 2
         return DataAccel(timeUtil.getTimeNowAsNMEA(), x, y, z)
     
     def getGyroData(self):
         gyro_data = self.accelero.get_gyro_data()
-        pitch = gyro_data.x #needs math formula
+        pitch = gyro_data.x #TODO: needs math formula
         yaw = gyro_data.y   #idem
         roll = gyro_data.z  #idem 2
         return DataGyro(timeUtil.getTimeNowAsNMEA(), pitch, yaw, roll)
