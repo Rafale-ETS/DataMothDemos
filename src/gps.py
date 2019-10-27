@@ -3,6 +3,7 @@
 import serial
 
 import timeUtil
+from database import mothDBSingle as mothDB
 
 class DataRMC:
     def __init__(self, time, date, status, latt, lattD, longit, longD, speedOG, trackAgl, magVar, magVarD):
@@ -77,6 +78,7 @@ class Nmea_GPS:
                 if self.debug:
                     print("--- paquet: ", self.gps.__dict__)
                 self.paquets = 0
+                self.writeDataToDB(self.gps)
 
 
     def extractGPS(self, gga, rmc):
@@ -90,6 +92,9 @@ class Nmea_GPS:
         #time = line[1]
         return DataGGA(timeUtil.getTimeNowAsNMEA(), line[2], line[3], line[4], line[5], line[6], line[7], line[8], line[9], line[11])
         
+    def writeDataToDB(self, gpsData):
+        mothDB.addGPSData(gpsData)
+
     def debugPrint(self, line):
         print(line)
 
