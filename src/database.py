@@ -62,13 +62,15 @@ class MothDB:
                 WDIR    REAL                
                 );
             ''')
+        self.conn.commit()
+
+    def __del__(self):
+        print("closing Database.")
         self.conn.close()
 
     def addToDB(self, request):
-        self.hook = sqlite3.connect(self.dbPath)
-        self.hook.execute(request)
-        self.hook.commit()
-        self.hook.close()
+        self.conn.execute(request)
+        self.conn.commit()
 
     def addGPSData(self, gps):
         self.addToDB("INSERT INTO gps (TIME, DATE, LATT, LATD, LONG, LOND, SPDG, TAGL, HDIL, AMSL, HMSL) VALUES("+ \
