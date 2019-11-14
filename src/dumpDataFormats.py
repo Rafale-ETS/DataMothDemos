@@ -4,6 +4,8 @@ import json
 import timeUtil, time
 from database import mothDBSingle as mothDB
 
+import printHelper
+
 #dump data formats:
 from gps import DataGGA, DataRMC, DataGPS
 from gyro_accel import DataAccel, DataGyro, DataTemperature
@@ -39,17 +41,25 @@ if dumpJson:
 
 if fillDB:
     dataCount = 0
-    while(dataCount < 120): #devrais tourner pour 1min -ish a 2 points de donne /min
-        gps.time = timeUtil.getTimeNowAsNMEA()
-        gps.date = timeUtil.getDateNowAsNMEA()
-        acc.time = timeUtil.getTimeNowAsNMEA()
-        acc.date = timeUtil.getDateNowAsNMEA()
-        gyr.time = timeUtil.getTimeNowAsNMEA()
-        gyr.date = timeUtil.getDateNowAsNMEA()
-        tem.time = timeUtil.getTimeNowAsNMEA()
-        tem.date = timeUtil.getDateNowAsNMEA()
-        win.time = timeUtil.getTimeNowAsNMEA()
-        win.date = timeUtil.getDateNowAsNMEA()
+
+    printHelper.debug("started DataDump")
+    
+    while(dataCount < 120): 
+
+        printHelper.debug(str(dataCount))
+
+        timenow = timeUtil.getTimeNowAsNMEA()
+        datenow = timeUtil.getDateNowAsNMEA()
+        gps.time = timenow
+        gps.date = datenow
+        acc.time = timenow
+        acc.date = datenow
+        gyr.time = timenow
+        gyr.date = datenow
+        tem.time = timenow
+        tem.date = datenow
+        win.time = timenow
+        win.date = datenow
 
         mothDB.addGPSData(gps)
         mothDB.addACCData(acc)
